@@ -5,6 +5,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
+import static android.R.attr.delay;
+
 // http://lirc.sourceforge.net/remotes/
 
 public class MainActivity extends AppCompatActivity {
@@ -32,6 +34,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btnInfo:
                 // 2 is the manu id from the Esp code
                 code="2,20DF55AA,32,0";
+                mqttsend(code);
+                break;
+            case R.id.btn13:
+                // 2 is the manu id from the Esp code
+                code="2,20DF8877,32,0";
+                mqttsend(code);
+                code="2,20DFC837,32,0";
                 mqttsend(code);
                 break;
         }
