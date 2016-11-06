@@ -8,36 +8,119 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="nu.paheco.patrik.lgmqttremote.MainActivity">
+    tools:context="nu.paheco.patrik.lgmqttremote.MainActivity"
+    android:background="#FFFEEE">
+
 
     <Button
         android:text="Power"
+        android:id="@+id/btnPower"
+        android:onClick="btnClick"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:id="@+id/btnPower"
+        style="@style/Widget.AppCompat.Button.Colored" />
+
+    <Button
+        android:text="TV4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn4"
+        android:onClick="btnClick"
+        android:layout_centerVertical="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="26dp"
-        android:onClick="btnClick" />
+        android:layout_marginStart="59dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/btn" />
+
+    <Button
+            android:text="Barnkanalen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn13"
+            android:onClick="btnClick"
+        android:layout_alignBaseline="@+id/btn4"
+        android:layout_alignBottom="@+id/btn4"
+        android:layout_toEndOf="@+id/btn4"
+        android:layout_marginStart="46dp"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/btn"
+        android:padding="5dp" />
 
     <Button
         android:text="Info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btnPower"
-        android:layout_alignStart="@+id/btnPower"
-        android:layout_marginTop="27dp"
         android:id="@+id/btnInfo"
+        android:onClick="btnClick"
+        android:layout_above="@+id/btn4"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="34dp" />
+
+    <Button
+        android:text="Input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnInput"
+        android:layout_alignEnd="@+id/btnInfo"
+        android:layout_marginEnd="14dp"
+        android:layout_alignParentTop="true"
+        android:onClick="btnClick (MainActivity)"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/btn" />
+
+    <Button
+        android:text="test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/btnInput"
+        android:layout_marginStart="14dp"
+        android:id="@+id/test"
         android:onClick="btnClick" />
 
     <Button
-        android:text="13"
+        android:text="P+"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:id="@+id/btn13"
-        android:layout_marginTop="12dp"
-        android:onClick="btnClick"
-        android:layout_alignTop="@+id/btnPower"
-        android:layout_toEndOf="@+id/btnPower" />
+        android:layout_marginTop="41dp"
+        android:id="@+id/Pup"
+        android:layout_below="@+id/btn4"
+        android:layout_toStartOf="@+id/btnInfo"
+        android:onClick="btnClick (MainActivity)"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/btnPgm" />
+
+    <Button
+        android:text="P-"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:id="@+id/Pdwn"
+        android:layout_below="@+id/Pup"
+        android:layout_alignStart="@+id/Pup"
+        android:onClick="btnClick (MainActivity)"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/btnPgm" />
+
+    <Button
+        android:text="Vol up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Pup"
+        android:layout_alignEnd="@+id/btn13"
+        android:id="@+id/volup"
+        android:onClick="btnClick (MainActivity)"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/btnVol" />
+
+    <Button
+        android:text="Vol down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/Pdwn"
+        android:layout_alignStart="@+id/volup"
+        android:id="@+id/voldwn"
+        android:onClick="btnClick (MainActivity)"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:background="@color/btnVol" />
 </RelativeLayout>
