@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/row1">
+
+        <Button
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:id="@+id/btn1"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+            android:layout_width="wrap_content" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2"
+            android:id="@+id/btn2"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+            android:layout_toEndOf="@id/btn1"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="3"
+            android:id="@+id/btn3"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/row1"
+        android:id="@+id/row2">
+        <Button
+            android:layout_height="wrap_content"
+            android:text="4"
+            android:id="@+id/btn4"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+            android:layout_width="wrap_content"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:id="@+id/btn5"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+            android:layout_toEndOf="@id/btn4"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:id="@+id/btn6"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+            android:layout_toEndOf="@id/btn4"
+            />
+            \>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/row3"
+        android:layout_below="@id/row2">
+        <Button
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:id="@+id/btn7"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+            android:layout_width="wrap_content"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8"
+            android:id="@+id/btn8"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+            android:layout_toEndOf="@id/btn4"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9"
+            android:id="@+id/btn9"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+            android:layout_toEndOf="@id/btn4"
+            />
+        \>
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal" android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/row4"
+        android:layout_below="@id/row3">
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="0"
+        android:id="@+id/btn0"
+        android:enabled="true"
+        android:onClick="keypadbtnClick"
+        />
+    \>
+    </LinearLayout>
+
+</RelativeLayout>

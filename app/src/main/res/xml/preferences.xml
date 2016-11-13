@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="@string/pref_title">
+        <EditTextPreference
+            android:key="Mqtt server ip"
+            android:title="@string/pref_ip"
+            android:defaultValue="192.168.1.1" />
+        <EditTextPreference
+            android:key="Mqtt server username"
+            android:title="@string/pref_username"
+            android:defaultValue="user" />
+        <EditTextPreference
+            android:key="Mqtt server password"
+            android:title="@string/pref_password"
+            android:defaultValue="password" />
+    </PreferenceCategory>
+    </PreferenceScreen>

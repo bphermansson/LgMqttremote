@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">LgMqttremote</string>
+    <string name="pref_ip">Mqtt server ip</string>
+    <string name="pref_username">Mqtt server username</string>
+    <string name="pref_password">Mqtt server password</string>
+    <string name="pref_title">Preferences</string>
+    <string name="notset">Error: Check settings</string>
 </resources>
