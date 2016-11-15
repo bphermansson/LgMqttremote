@@ -140,6 +140,18 @@
         android:onClick="btnClick"
         android:layout_below="@+id/btn13"
         android:layout_centerHorizontal="true"
-        android:layout_alignTop="@+id/Pup" />
+        android:layout_alignTop="@+id/Pup"
+        />
+    <Button
+        android:text="Youtube"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:id="@+id/btnYoutube"
+        android:onClick="btnClick"
+        android:layout_below="@+id/btnKeypad"
+        android:layout_centerHorizontal="true"
+        android:layout_alignTop="@+id/Pdwn"
+        />
 
 </RelativeLayout>

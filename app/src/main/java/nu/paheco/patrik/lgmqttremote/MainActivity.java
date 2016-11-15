@@ -1,9 +1,11 @@
 package nu.paheco.patrik.lgmqttremote;
 
 import android.app.ActionBar;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +16,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.List;
 
 import static android.R.attr.delay;
 
@@ -121,6 +125,19 @@ public class MainActivity extends AppCompatActivity {
                 code = getString(R.string.voldwn);
                 System.out.println(code);
                 mqttsend(code);
+                break;
+
+            case R.id.btnYoutube:
+                System.out.println("Launch Youtube");
+                //com.google.android.youtube
+                /*
+                PackageManager packageManager = getPackageManager();
+                Intent mapIntent = new Intent(Intent.v);
+
+                List activities = packageManager.queryIntentActivities(intent,
+                        PackageManager.MATCH_DEFAULT_ONLY);
+                boolean isIntentSafe = activities.size() > 0;
+*/
                 break;
             /*
             case R.id.test:
