@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -130,14 +131,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btnYoutube:
                 System.out.println("Launch Youtube");
                 //com.google.android.youtube
-                /*
-                PackageManager packageManager = getPackageManager();
-                Intent mapIntent = new Intent(Intent.v);
+                Intent videoClient = new Intent(Intent.ACTION_VIEW);
+                //videoClient.setData("www.youtube.com/watch?v=yqIQvE5R1tU");
+                videoClient.setData(Uri.parse("https://www.youtube.com/watch?v=EwSdmxyayx0&amp;feature=youtube_gdata"));//you can try here your own video url
 
-                List activities = packageManager.queryIntentActivities(intent,
-                        PackageManager.MATCH_DEFAULT_ONLY);
-                boolean isIntentSafe = activities.size() > 0;
-*/
+                videoClient.setClassName("com.google.android.youtube", "com.google.android.youtube.WatchActivity");
+                startActivity(videoClient);
+
                 break;
             /*
             case R.id.test:
