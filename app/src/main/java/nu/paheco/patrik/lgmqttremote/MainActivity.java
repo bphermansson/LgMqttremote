@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     */
     String topic="irsender";
     String code = "";
+    //TextView infolabel = (TextView) findViewById(R.id.infolabel);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,8 +50,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (mqttip.equals("N/A") || mqttuser.equals("N/A") || mqttpass.equals("N/A")) {
             // Settings not configured
-            TextView infolabel = (TextView) findViewById(R.id.infolabel);
-            infolabel.setText(R.string.notset);
+            //TextView infolabel = (TextView) findViewById(R.id.infolabel);
+            //infolabel.setText(R.string.notset);
         }
     }
     public void btnClick(View view) {
@@ -58,8 +60,11 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btnPower:
                 //code="2,20DF10EF,32,1";
                 System.out.println("Power");
+                // Get button label
+                Button b = (Button)view;
+                String buttonText = b.getText().toString();
                 code = getString(R.string.power);
-                mqttsend(code);
+                mqttsend(code, buttonText);
                 break;
             /*
             case R.id.btnInfo:
@@ -75,57 +80,79 @@ public class MainActivity extends AppCompatActivity {
                 // Send '1'
                 code = getString(R.string.d1);
                 System.out.println(code);
-                //code="2,20DF8877,32,1";
-                mqttsend(code);
+                // Get button label
+                b = (Button)view;
+                buttonText = b.getText().toString();
+                mqttsend(code, buttonText);
                 // Send '3'
-                //code="2,20DFC837,32,1";
                 code = getString(R.string.d3);
                 System.out.println(code);
-                mqttsend(code);
+                mqttsend(code, buttonText);
                 break;
             case R.id.btn4:
                 // Button '4'
                 //code="2,20DF28D7,32,1";
                 code = getString(R.string.d4);
                 System.out.println(code);
-                mqttsend(code);
+                // Get button label
+                b = (Button)view;
+                buttonText = b.getText().toString();
+                mqttsend(code, buttonText);
                 break;
             case R.id.btnSvt2:
                 // Button '2'
                 //code="2,20DF48B7,32,1";
                 code = getString(R.string.d2);
                 System.out.println(code);
-                mqttsend(code);
+                // Get button label
+                b = (Button)view;
+                buttonText = b.getText().toString();
+                mqttsend(code, buttonText);
                 break;
             case R.id.btnInput:
                 //code="2,20DFD02F,32,1";
                 code = getString(R.string.input);
                 System.out.println(code);
-                mqttsend(code);
+                // Get button label
+                b = (Button)view;
+                buttonText = b.getText().toString();
+                mqttsend(code, buttonText);
                 break;
             case R.id.Pup:
                 //code="2,20DF00FF,32,1";
                 code = getString(R.string.pup);
                 System.out.println(code);
-                mqttsend(code);
+                // Get button label
+                b = (Button)view;
+                buttonText = b.getText().toString();
+                mqttsend(code, buttonText);
                 break;
             case R.id.Pdwn:
                 //code="2,20DF807F,32,1";
                 code = getString(R.string.pdwn);
                 System.out.println(code);
-                mqttsend(code);
+                // Get button label
+                b = (Button)view;
+                buttonText = b.getText().toString();
+                mqttsend(code, buttonText);
                 break;
             case R.id.volup:
                 //code="2,5EA158A7,32,1";
                 code = getString(R.string.volup);
                 System.out.println(code);
-                mqttsend(code);
+                // Get button label
+                b = (Button)view;
+                buttonText = b.getText().toString();
+                mqttsend(code, buttonText);
                 break;
             case R.id.voldwn:
                 //code="2,5EA1D827,32,1";
                 code = getString(R.string.voldwn);
                 System.out.println(code);
-                mqttsend(code);
+                // Get button label
+                b = (Button)view;
+                buttonText = b.getText().toString();
+                mqttsend(code, buttonText);
                 break;
 
             case R.id.btnYoutube:
@@ -139,11 +166,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(videoClient);
 
                 break;
-            /*
-            case R.id.test:
+/*
+            case R.id.btnMovie:
                 // Power on
                 code="2,20DF10EF,32,1";
-                mqttsend(code);
+                // Get button label
+                b = (Button)view;
+                buttonText = b.getText().toString();
+                mqttsend(code,buttonText);
                 // Wait 5s
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
@@ -151,22 +181,22 @@ public class MainActivity extends AppCompatActivity {
                     public void run() {
                         //Do something after 5s
                         // Send input change two times
+                        String buttonText="Movie";
                         code="2,20DFD02F,32,1";
-                        mqttsend(code);
+                        mqttsend(code,buttonText);
                         code="2,20DFD02F,32,1";
-                        mqttsend(code);
+                        mqttsend(code,buttonText);
                     }
                 }, 5000);
                 break;
-            */
+*/
             case R.id.btnKeypad:
                 startActivity(new Intent(this, keypad.class));
                 break;
                 // Open keypad activity
         }
     }
-    public void mqttsend(String code) {
-
+    public void mqttsend(String code, String buttonText) {
         // Get stored preferences
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         String mqttip = sharedPref.getString("Mqtt server ip", "N/A");
@@ -175,18 +205,18 @@ public class MainActivity extends AppCompatActivity {
         if (mqttip.equals("N/A") || mqttuser.equals("N/A") || mqttpass.equals("N/A")) {
             // Settings not configured
             TextView txtInfo=(TextView) findViewById(R.id.infolabel);
-            txtInfo.setText("Settings not configured");
+            txtInfo.setText(R.string.nosettings);
         }
         else {
             mqttPublish.main(mContext, mqttip, mqttuser, mqttpass, topic, code);
             Context context = getApplicationContext();
-            Toast tea = Toast.makeText(context, "Mqtt message sent", Toast.LENGTH_SHORT);
+            Toast tea = Toast.makeText(context, R.string.mess_sent, Toast.LENGTH_SHORT);
             tea.show();
+            //infolabel.setText(R.string.mess_sent);
         }
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        //Log.d("Menu: ", "Create menu");
         getMenuInflater().inflate(R.menu.menu, menu);
         return super.onCreateOptionsMenu(menu);
     }

@@ -2,11 +2,13 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_marginTop="40dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:orientation="horizontal" android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
         android:id="@+id/row1">
 
         <Button
@@ -15,7 +17,8 @@
             android:id="@+id/btn1"
             android:enabled="true"
             android:onClick="keypadbtnClick"
-            android:layout_width="wrap_content" />
+            android:layout_width="wrap_content"
+            />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -32,14 +35,18 @@
             android:id="@+id/btn3"
             android:enabled="true"
             android:onClick="keypadbtnClick"
-            />
-    </LinearLayout>
+            android:layout_toEndOf="@id/btn2"
+            android:layout_centerHorizontal="true" />
+    </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:orientation="horizontal" android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/row1"
-        android:id="@+id/row2">
+        android:id="@+id/row2"
+        android:layout_below="@+id/row1"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="55dp"
+        >
         <Button
             android:layout_height="wrap_content"
             android:text="4"
@@ -64,15 +71,18 @@
             android:id="@+id/btn6"
             android:enabled="true"
             android:onClick="keypadbtnClick"
-            android:layout_toEndOf="@id/btn4"
+            android:layout_toEndOf="@id/btn5"
             />
-            \>
-    </LinearLayout>
-    <LinearLayout
+        \>
+    </RelativeLayout>
+
+    <RelativeLayout
         android:orientation="horizontal" android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/row3"
-        android:layout_below="@id/row2">
+        android:layout_below="@id/row2"
+        android:layout_marginStart="55dp"
+        >
         <Button
             android:layout_height="wrap_content"
             android:text="7"
@@ -88,7 +98,7 @@
             android:id="@+id/btn8"
             android:enabled="true"
             android:onClick="keypadbtnClick"
-            android:layout_toEndOf="@id/btn4"
+            android:layout_toEndOf="@id/btn7"
             />
         <Button
             android:layout_width="wrap_content"
@@ -97,17 +107,28 @@
             android:id="@+id/btn9"
             android:enabled="true"
             android:onClick="keypadbtnClick"
-            android:layout_toEndOf="@id/btn4"
+            android:layout_toEndOf="@id/btn8"
             />
         \>
 
-    </LinearLayout>
-    <LinearLayout
+    </RelativeLayout>
+    <RelativeLayout
         android:orientation="horizontal" android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/row4"
-        android:layout_below="@id/row3">
+        android:layout_below="@id/row3"
+        android:layout_marginStart="55dp"
+        >
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/btnback"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+
+            />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -115,8 +136,9 @@
         android:id="@+id/btn0"
         android:enabled="true"
         android:onClick="keypadbtnClick"
+        android:layout_toEndOf="@id/btnback"
         />
     \>
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

@@ -5,4 +5,6 @@
     <string name="pref_password">Mqtt server password</string>
     <string name="pref_title">Preferences</string>
     <string name="notset">Error: Check settings</string>
+    <string name="mess_sent">Message sent</string>
+    <string name="nosettings">Settings not set</string>
 </resources>
