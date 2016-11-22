@@ -23,6 +23,13 @@
             android:parentActivityName=".MainActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
+        <activity
+            android:name=".help"
+            android:label="Help"
+            android:parentActivityName=".MainActivity"
+            android:windowSoftInputMode="adjustResize">
+        </activity>
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

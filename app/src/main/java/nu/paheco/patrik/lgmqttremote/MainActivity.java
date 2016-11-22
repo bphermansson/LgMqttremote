@@ -27,11 +27,6 @@ import static android.R.attr.delay;
 
 public class MainActivity extends AppCompatActivity {
     private Context mContext;
-    /*
-    String mqttip = "192.168.1.79";
-    String mqttuser = "emonpi";
-    String mqttpass = "emonpimqtt2016";
-    */
     String topic="irsender";
     String code = "";
     //TextView infolabel = (TextView) findViewById(R.id.infolabel);
@@ -50,8 +45,8 @@ public class MainActivity extends AppCompatActivity {
 
         if (mqttip.equals("N/A") || mqttuser.equals("N/A") || mqttpass.equals("N/A")) {
             // Settings not configured
-            //TextView infolabel = (TextView) findViewById(R.id.infolabel);
-            //infolabel.setText(R.string.notset);
+            TextView infolabel = (TextView) findViewById(R.id.infolabel);
+            infolabel.setText(R.string.notset);
         }
     }
     public void btnClick(View view) {
@@ -158,13 +153,15 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btnYoutube:
                 System.out.println("Launch Youtube");
                 //com.google.android.youtube
-                Intent videoClient = new Intent(Intent.ACTION_VIEW);
+                //Intent videoClient = new Intent(Intent.ACTION_VIEW);
                 //videoClient.setData("www.youtube.com/watch?v=yqIQvE5R1tU");
-                videoClient.setData(Uri.parse("https://www.youtube.com/watch?v=EwSdmxyayx0&amp;feature=youtube_gdata"));//you can try here your own video url
+                //videoClient.setData(Uri.parse("https://www.youtube.com/watch?v=EwSdmxyayx0&amp;feature=youtube_gdata"));//you can try here your own video url
 
-                videoClient.setClassName("com.google.android.youtube", "com.google.android.youtube.WatchActivity");
-                startActivity(videoClient);
-
+                //videoClient.setClassName("com.google.android.youtube", "com.google.android.youtube.WatchActivity");
+                //startActivity(videoClient);
+                String id = "";
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube://" + id));
+                startActivity(intent);
                 break;
 /*
             case R.id.btnMovie:
@@ -230,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, preferences.class));
                 break;
             case R.id.help:
-                //startActivity(new Intent(this, help.class));
+                startActivity(new Intent(this, help.class));
                 break;
         }
         return super.onOptionsItemSelected(item);
