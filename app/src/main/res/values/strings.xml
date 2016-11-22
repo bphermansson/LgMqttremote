@@ -11,9 +11,9 @@
     <string name="helptext">
 
         This app requires an Mqtt broker and a Mqtt-enabled Ir-sender. The broker is a software which handles Mqtt-messages in the network.
-        The Ir-sender is a Esp01 connected via Wifi that listens to Mqtt messages with the topic "irsender". When messages with this
-        topic arrives it reads the payload and converts it to ir codes. Theese are then sent via the device's ir diode.
-        The app sends codes for LG TV:s via Mqtt to the broker with the subject "irsender".
+        The Ir-sender is a Esp01 connected via Wifi that listens to Mqtt messages with the topic irsender. When messages with this
+        topic arrives it reads the payload and converts it to ir codes. Theese are then sent via the devices ir diode.
+        The app sends codes for LG TV:s via Mqtt to the broker with the subject irsender.
 
 
         Start by opening the settings.

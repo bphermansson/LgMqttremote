@@ -17,5 +17,6 @@
         android:inputType="textPersonName"
         android:text="Name"
         android:ems="10"
-        android:id="@+id/helpText" />
+        android:id="@+id/helpText"
+        android:singleLine="false" />
 </LinearLayout>
