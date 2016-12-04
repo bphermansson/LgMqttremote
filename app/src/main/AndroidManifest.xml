@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="nu.paheco.patrik.lgmqttremote">
+    package="nu.paheco.patrik.LgTvRemote">
     <uses-permission android:name="android.permission.INTERNET"/>
 
     />
@@ -12,34 +12,35 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".preferences"
+            android:name="nu.paheco.patrik.LgTvRemote.preferences"
             android:label="Settings"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="nu.paheco.patrik.LgTvRemote.MainActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
         <activity
-            android:name=".keypad"
+            android:name="nu.paheco.patrik.LgTvRemote.keypad"
             android:label="Keypad"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="nu.paheco.patrik.LgTvRemote.MainActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
         <activity
-            android:name=".help"
+            android:name="nu.paheco.patrik.LgTvRemote.help"
             android:label="Help"
-            android:parentActivityName=".MainActivity"
+            android:parentActivityName="nu.paheco.patrik.LgTvRemote.MainActivity"
             android:windowSoftInputMode="adjustResize">
         </activity>
 
-        <activity android:name=".MainActivity">
+        <activity android:name="nu.paheco.patrik.LgTvRemote.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- Mqtt Service -->
+        <service android:name="org.eclipse.paho.android.service.MqttService"></service>
     </application>
 
-    <!-- Mqtt Service -->
-    <service android:name="org.eclipse.paho.android.service.MqttService"></service>
 
 </manifest>

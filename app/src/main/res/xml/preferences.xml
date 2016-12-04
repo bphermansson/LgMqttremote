@@ -14,5 +14,29 @@
             android:key="Mqtt server password"
             android:title="@string/pref_password"
             android:defaultValue="password" />
+        <EditTextPreference
+            android:key="preset1"
+            android:title="@string/pref_preset1"
+            android:defaultValue="Preset 1" />
+        <EditTextPreference
+            android:key="preset2"
+            android:title="@string/pref_preset2"
+            android:defaultValue="Preset 2" />
+        <EditTextPreference
+            android:key="preset3"
+            android:title="@string/pref_preset3"
+            android:defaultValue="Preset 3" />
+        <EditTextPreference
+            android:key="preset1code"
+            android:title="@string/pref_preset1code"
+            android:defaultValue="Preset 1" />
+        <EditTextPreference
+            android:key="preset2code"
+            android:title="@string/pref_preset2code"
+            android:defaultValue="Preset 2" />
+        <EditTextPreference
+            android:key="preset3code"
+            android:title="@string/pref_preset3code"
+            android:defaultValue="Preset 3" />
     </PreferenceCategory>
     </PreferenceScreen>

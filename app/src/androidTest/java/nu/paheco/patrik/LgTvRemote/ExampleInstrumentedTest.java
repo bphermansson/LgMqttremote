@@ -1,4 +1,4 @@
-package nu.paheco.patrik.lgmqttremote;
+package nu.paheco.patrik.LgTvRemote;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

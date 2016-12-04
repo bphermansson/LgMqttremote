@@ -1,17 +1,12 @@
-package nu.paheco.patrik.lgmqttremote;
+package nu.paheco.patrik.LgTvRemote;
 
-import android.app.ActionBar;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,9 +14,9 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
-
-import static android.R.attr.delay;
+import static nu.paheco.patrik.LgTvRemote.R.id.btnPreset1;
+import static nu.paheco.patrik.LgTvRemote.R.id.btnPreset2;
+import static nu.paheco.patrik.LgTvRemote.R.id.btnPreset3;
 
 // http://lirc.sourceforge.net/remotes/
 
@@ -41,16 +36,27 @@ public class MainActivity extends AppCompatActivity {
         String mqttip = sharedPref.getString("Mqtt server ip", "N/A");
         String mqttuser = sharedPref.getString("Mqtt server username", "N/A");
         String mqttpass = sharedPref.getString("Mqtt server password", "N/A");
-        System.out.println(mqttip + " " + mqttuser + " " + mqttpass);
+        //System.out.println(mqttip + " " + mqttuser + " " + mqttpass);
+
+        // Set button preset labels
+        Button Preset1 = (Button)findViewById(btnPreset1);
+        Button Preset2 = (Button)findViewById(btnPreset2);
+        Button Preset3 = (Button)findViewById(btnPreset3);
+        String preset1text = sharedPref.getString("preset1", "Preset 1");
+        String preset2text = sharedPref.getString("preset2", "Preset 2");
+        String preset3text = sharedPref.getString("preset3", "Preset 3");
+        Preset1.setText(preset1text);
+        Preset2.setText(preset2text);
+        Preset3.setText(preset3text);
 
         if (mqttip.equals("N/A") || mqttuser.equals("N/A") || mqttpass.equals("N/A")) {
             // Settings not configured
-            TextView infolabel = (TextView) findViewById(R.id.infolabel);
-            infolabel.setText(R.string.notset);
         }
     }
     public void btnClick(View view) {
         System.out.println("btnClick");
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
+
         switch (view.getId()) {
             case R.id.btnPower:
                 //code="2,20DF10EF,32,1";
@@ -70,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                 mqttsend(code);
                 break;
             */
-            case R.id.btn13:
+            case R.id.btnPreset2:
                 // 2 is the manu id from the Esp code
                 // Send '1'
                 code = getString(R.string.d1);
@@ -84,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
                 System.out.println(code);
                 mqttsend(code, buttonText);
                 break;
-            case R.id.btn4:
+            case R.id.btnPreset3:
                 // Button '4'
                 //code="2,20DF28D7,32,1";
                 code = getString(R.string.d4);
@@ -94,10 +100,10 @@ public class MainActivity extends AppCompatActivity {
                 buttonText = b.getText().toString();
                 mqttsend(code, buttonText);
                 break;
-            case R.id.btnSvt2:
+            case btnPreset1:
                 // Button '2'
                 //code="2,20DF48B7,32,1";
-                code = getString(R.string.d2);
+                String code = sharedPref.getString("preset1code", "Preset 1");
                 System.out.println(code);
                 // Get button label
                 b = (Button)view;
@@ -201,8 +207,9 @@ public class MainActivity extends AppCompatActivity {
         String mqttpass = sharedPref.getString("Mqtt server password", "N/A");
         if (mqttip.equals("N/A") || mqttuser.equals("N/A") || mqttpass.equals("N/A")) {
             // Settings not configured
-            TextView txtInfo=(TextView) findViewById(R.id.infolabel);
-            txtInfo.setText(R.string.nosettings);
+            Context context = getApplicationContext();
+            Toast tea = Toast.makeText(context, R.string.nosettings, Toast.LENGTH_SHORT);
+            tea.show();
         }
         else {
             mqttPublish.main(mContext, mqttip, mqttuser, mqttpass, topic, code);

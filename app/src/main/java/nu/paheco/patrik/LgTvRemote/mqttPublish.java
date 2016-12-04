@@ -1,13 +1,10 @@
-package nu.paheco.patrik.lgmqttremote;
+package nu.paheco.patrik.LgTvRemote;
 
 /**
  * Created by patrik on 11/5/16.
  */
 
 import android.content.Context;
-import android.content.Context;
-import android.util.Log;
-import android.widget.Toast;
 
 import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
@@ -16,8 +13,6 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.eclipse.paho.client.mqttv3.persist.MemoryPersistence;
 import org.eclipse.paho.client.mqttv3.MqttCallback;
 import org.eclipse.paho.client.mqttv3.IMqttDeliveryToken;
-
-import static android.content.Context.MODE_PRIVATE;
 
 
 class SimpleCallback implements MqttCallback {

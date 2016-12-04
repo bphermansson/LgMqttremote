@@ -8,17 +8,9 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="nu.paheco.patrik.lgmqttremote.MainActivity"
+    tools:context="nu.paheco.patrik.LgTvRemote.MainActivity"
     android:background="#FFFEEE">
 
-
-    <TextView
-        android:text="LG TV Remote"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
-        android:layout_marginBottom="16dp"
-        android:id="@+id/infolabel" />
 
     <Button
         android:text="P+"
@@ -26,7 +18,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
         android:id="@+id/Pup"
-        android:layout_below="@+id/btn4"
+        android:layout_below="@+id/btnPreset1"
         android:onClick="btnClick"
         style="@style/Widget.AppCompat.Button.Colored"
         android:background="@color/btnPgm" />
@@ -52,7 +44,7 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:background="@color/btnVol"
         android:layout_marginLeft="10dp"
-        android:layout_below="@+id/btnSvt2"
+        android:layout_below="@+id/btnPreset1"
         android:layout_marginTop="41dp"
         android:layout_alignParentRight="true" />
 
@@ -68,10 +60,9 @@
         android:background="@color/btnVol" />
 
     <Button
-        android:text="TV4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btn4"
+        android:id="@+id/btnPreset3"
         android:onClick="btnClick"
         style="@style/Widget.AppCompat.Button.Colored"
         android:background="@color/btn"
@@ -82,10 +73,9 @@
         android:layout_alignParentRight="true" />
 
     <Button
-            android:text="Barnkanalen"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/btn13"
+            android:id="@+id/btnPreset2"
             android:onClick="btnClick"
         style="@style/Widget.AppCompat.Button.Colored"
         android:background="@color/btn"
@@ -96,10 +86,9 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="SVT2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/btnSvt2"
+        android:id="@+id/btnPreset1"
         android:onClick="btnClick"
         style="@style/Widget.AppCompat.Button.Colored"
         android:background="@color/btn"
@@ -115,7 +104,6 @@
         android:onClick="btnClick"
         android:layout_height="wrap_content"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_below="@id/infolabel"
         android:padding="30dp"
         android:layout_width="wrap_content"
         android:textSize="24sp" />
@@ -126,7 +114,6 @@
         android:onClick="btnClick"
         android:layout_height="wrap_content"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_below="@id/infolabel"
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
         android:padding="30dp"
@@ -138,7 +125,7 @@
         android:layout_marginBottom="25dp"
         android:id="@+id/btnKeypad"
         android:onClick="btnClick"
-        android:layout_below="@+id/btn13"
+        android:layout_below="@+id/btnPreset1"
         android:layout_centerHorizontal="true"
         android:layout_alignTop="@+id/Pup"
         />

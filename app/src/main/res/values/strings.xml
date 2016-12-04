@@ -1,22 +1,31 @@
 <resources>
-    <string name="app_name">LgMqttremote</string>
+    <string name="app_name">LgTvRemote</string>
     <string name="pref_ip">Mqtt server ip</string>
     <string name="pref_username">Mqtt server username</string>
     <string name="pref_password">Mqtt server password</string>
     <string name="pref_title">Preferences</string>
+    <string name="pref_preset1">Preset 1 label</string>
+    <string name="pref_preset2">Preset 2 label</string>
+    <string name="pref_preset3">Preset 3 label</string>
+    <string name="pref_preset1code">Preset 1 code</string>
+    <string name="pref_preset2code">Preset 2 code</string>
+    <string name="pref_preset3code">Preset 3 code</string>
+
+
+
     <string name="notset">Error: Check settings</string>
     <string name="mess_sent">Message sent</string>
     <string name="nosettings">Settings not set</string>
     <string name="helptitle">Help</string>
     <string name="helptext">
-
-        This app requires an Mqtt broker and a Mqtt-enabled Ir-sender. The broker is a software which handles Mqtt-messages in the network.
-        The Ir-sender is a Esp01 connected via Wifi that listens to Mqtt messages with the topic irsender. When messages with this
-        topic arrives it reads the payload and converts it to ir codes. Theese are then sent via the devices ir diode.
         The app sends codes for LG TV:s via Mqtt to the broker with the subject irsender.
+        This app requires an Mqtt broker and a Mqtt-enabled Ir-sender. The broker is a software which handles Mqtt-messages in the network.
+        The Ir-sender is a Esp01 connected via Wifi that listens to Mqtt messages with the topic irsender (see https://github.com/bphermansson/espMqttIrblaster).
+        When messages with this topic arrives it reads the payload and converts it to ir codes. These are then sent via the
+        devices ir diode.
 
-
-        Start by opening the settings.
+        Start by opening the settings. There you set the Ip of your Mqtt-broker, the userid and the password.
+        After that the app is ready for use.
 
 
     </string>

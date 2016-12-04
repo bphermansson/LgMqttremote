@@ -1,4 +1,4 @@
-package nu.paheco.patrik.lgmqttremote;
+package nu.paheco.patrik.LgTvRemote;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
