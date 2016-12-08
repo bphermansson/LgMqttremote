@@ -101,14 +101,21 @@ public class MainActivity extends AppCompatActivity {
                 mqttsend(code, buttonText);
                 break;
             case btnPreset1:
-                // Button '2'
-                //code="2,20DF48B7,32,1";
                 String code = sharedPref.getString("preset1code", "Preset 1");
-                System.out.println(code);
-                // Get button label
-                b = (Button)view;
-                buttonText = b.getText().toString();
-                mqttsend(code, buttonText);
+                sendcode(code);
+                // A code can be just one code, or several codes divided by a comma.
+                // Split them up and send them
+                String[] items = code.split(",");
+                for (String codetosend : items)
+                {
+                    //System.out.println("item = " + codetosend);
+                    String wholeCode= "2,20DF" + codetosend + ",32,1";
+                    System.out.println(wholeCode);
+                    // Get button label
+                    b = (Button)view;
+                    buttonText = b.getText().toString();
+                    mqttsend(wholeCode, buttonText);
+                }
                 break;
             case R.id.btnInput:
                 //code="2,20DFD02F,32,1";
@@ -199,6 +206,13 @@ public class MainActivity extends AppCompatActivity {
                 // Open keypad activity
         }
     }
+
+    public void sendcode(String code){
+
+        System.out.println("In sendcode, code="+code);
+
+    }
+
     public void mqttsend(String code, String buttonText) {
         // Get stored preferences
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
