@@ -22,7 +22,7 @@ import static nu.paheco.patrik.LgTvRemote.R.id.btnPreset3;
 
 public class MainActivity extends AppCompatActivity {
     private Context mContext;
-    String topic="irsender";
+    public static String topic="irsender";
     String code = "";
     //TextView infolabel = (TextView) findViewById(R.id.infolabel);
 
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
                 Button b = (Button)view;
                 String buttonText = b.getText().toString();
                 code = getString(R.string.power);
-                mqttsend(code, buttonText);
+                mqttsend(code);
                 break;
             /*
             case R.id.btnInfo:
@@ -84,11 +84,11 @@ public class MainActivity extends AppCompatActivity {
                 // Get button label
                 b = (Button)view;
                 buttonText = b.getText().toString();
-                mqttsend(code, buttonText);
+                mqttsend(code);
                 // Send '3'
                 code = getString(R.string.d3);
                 System.out.println(code);
-                mqttsend(code, buttonText);
+                mqttsend(code);
                 break;
             case R.id.btnPreset3:
                 // Button '4'
@@ -98,24 +98,12 @@ public class MainActivity extends AppCompatActivity {
                 // Get button label
                 b = (Button)view;
                 buttonText = b.getText().toString();
-                mqttsend(code, buttonText);
+                mqttsend(code);
                 break;
             case btnPreset1:
                 String code = sharedPref.getString("preset1code", "Preset 1");
                 sendcode(code);
-                // A code can be just one code, or several codes divided by a comma.
-                // Split them up and send them
-                String[] items = code.split(",");
-                for (String codetosend : items)
-                {
-                    //System.out.println("item = " + codetosend);
-                    String wholeCode= "2,20DF" + codetosend + ",32,1";
-                    System.out.println(wholeCode);
-                    // Get button label
-                    b = (Button)view;
-                    buttonText = b.getText().toString();
-                    mqttsend(wholeCode, buttonText);
-                }
+
                 break;
             case R.id.btnInput:
                 //code="2,20DFD02F,32,1";
@@ -124,7 +112,7 @@ public class MainActivity extends AppCompatActivity {
                 // Get button label
                 b = (Button)view;
                 buttonText = b.getText().toString();
-                mqttsend(code, buttonText);
+                mqttsend(code);
                 break;
             case R.id.Pup:
                 //code="2,20DF00FF,32,1";
@@ -133,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
                 // Get button label
                 b = (Button)view;
                 buttonText = b.getText().toString();
-                mqttsend(code, buttonText);
+                mqttsend(code);
                 break;
             case R.id.Pdwn:
                 //code="2,20DF807F,32,1";
@@ -142,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
                 // Get button label
                 b = (Button)view;
                 buttonText = b.getText().toString();
-                mqttsend(code, buttonText);
+                mqttsend(code);
                 break;
             case R.id.volup:
                 //code="2,5EA158A7,32,1";
@@ -151,7 +139,7 @@ public class MainActivity extends AppCompatActivity {
                 // Get button label
                 b = (Button)view;
                 buttonText = b.getText().toString();
-                mqttsend(code, buttonText);
+                mqttsend(code);
                 break;
             case R.id.voldwn:
                 //code="2,5EA1D827,32,1";
@@ -160,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
                 // Get button label
                 b = (Button)view;
                 buttonText = b.getText().toString();
-                mqttsend(code, buttonText);
+                mqttsend(code);
                 break;
 
             case R.id.btnYoutube:
@@ -208,12 +196,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void sendcode(String code){
-
         System.out.println("In sendcode, code="+code);
-
+        // A code can be just one code, or several codes divided by a comma.
+        // Split them up and send them
+        String[] items = code.split(",");
+        for (String codetosend : items)
+        {
+            //System.out.println("item = " + codetosend);
+            String wholeCode= "2,20DF" + codetosend + ",32,1";
+            System.out.println(wholeCode);
+            mqttsend(wholeCode);
+        }
     }
 
-    public void mqttsend(String code, String buttonText) {
+    public void mqttsend(String code) {
         // Get stored preferences
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         String mqttip = sharedPref.getString("Mqtt server ip", "N/A");

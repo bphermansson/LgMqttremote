@@ -18,3 +18,8 @@ Codes can be found at http://lirc.sourceforge.net/remotes/lg/AKB69680403
 Use the code in the second column, without the "0x". If you want to send a 2,
 set the code to 48B7. If you want to send two codes, type them both separated by a ,.
 To send a 2(48B7) and a 1(8877), set code to 48B7,8877.
+
+1 - 8877
+2 - 48B7
+3 - C837
+4 - 28D7
