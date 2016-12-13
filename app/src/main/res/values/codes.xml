@@ -1,19 +1,19 @@
 <resources>
-    <string name="power">2,20DF10EF,32,1</string>
+    <string name="power">10EF</string>
     <string name="d1">8877</string>
-    <string name="d2">2,20DF48B7,32,1</string>
-    <string name="d3">2,20DFC837,32,1</string>
-    <string name="d4">2,20DF28D7,32,1</string>
-    <string name="d5">2,20DFA857,32,1</string>
-    <string name="d6">2,20DF6897,32,1</string>
-    <string name="d7">2,20DFE817,32,1</string>
-    <string name="d8">2,20DF18E7,32,1</string>
-    <string name="d9">2,20DF9867,32,1</string>
-    <string name="d0">2,20DF08F7,32,1</string>
-    <string name="input">2,20DFD02F,32,1</string>
-    <string name="pup">2,20DF00FF,32,1</string>
-    <string name="pdwn">2,20DF807F,32,1</string>
-    <string name="volup">3,5EA158A7,32,1</string>
-    <string name="voldwn">3,5EA1D827,32,1</string>
-    <string name="info">2,20DF55AA,32,1</string>
+    <string name="d2">48B7</string>
+    <string name="d3">C837</string>
+    <string name="d4">28D7</string>
+    <string name="d5">A857</string>
+    <string name="d6">6897</string>
+    <string name="d7">E817</string>
+    <string name="d8">18E7</string>
+    <string name="d9">9867</string>
+    <string name="d0">08F7</string>
+    <string name="input">D02F</string>
+    <string name="pup">00FF</string>
+    <string name="pdwn">807F</string>
+    <string name="volup">58A7</string>
+    <string name="voldwn">D827</string>
+    <string name="info">55AA</string>
 </resources>

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -9,11 +10,12 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="nu.paheco.patrik.LgTvRemote.MainActivity"
-    android:background="#FFFEEE">
+    android:background="@android:color/background_light">
 
 
-    <Button
+    <ImageButton
         android:text="P+"
+        app:srcCompat="@mipmap/cpplus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="41dp"
@@ -21,10 +23,13 @@
         android:layout_below="@+id/btnPreset1"
         android:onClick="btnClick"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:background="@color/btnPgm" />
+        android:background="@android:color/background_light"
+        android:minHeight="80dp"
+        />
 
-    <Button
+    <ImageButton
         android:text="P-"
+        app:srcCompat="@mipmap/cpminus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="13dp"
@@ -33,23 +38,29 @@
         android:layout_alignStart="@+id/Pup"
         android:onClick="btnClick"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:background="@color/btnPgm" />
+        android:background="@android:color/background_light"
+        android:minHeight="80dp"
+        />
 
-    <Button
+    <ImageButton
         android:text="Vol up"
+        app:srcCompat="@mipmap/cvolplus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/volup"
         android:onClick="btnClick"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:background="@color/btnVol"
+        android:background="@android:color/background_light"
         android:layout_marginLeft="10dp"
         android:layout_below="@+id/btnPreset1"
         android:layout_marginTop="41dp"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:minHeight="80dp"
+        />
 
-    <Button
+    <ImageButton
         android:text="Vol down"
+        app:srcCompat="@mipmap/cvolminus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/Pdwn"
@@ -57,7 +68,9 @@
         android:id="@+id/voldwn"
         android:onClick="btnClick"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:background="@color/btnVol" />
+        android:background="@android:color/background_light"
+        android:minHeight="80dp"
+        />
 
     <Button
         android:layout_width="wrap_content"
@@ -70,7 +83,9 @@
         android:layout_marginTop="20dp"
         android:layout_below="@+id/btnPower"
         android:layout_marginLeft="10dp"
-        android:layout_alignParentRight="true" />
+        android:layout_alignParentRight="true"
+        android:textColor="@android:color/black"
+        />
 
     <Button
             android:layout_width="wrap_content"
@@ -83,7 +98,9 @@
         android:layout_below="@+id/btnPower"
         android:layout_alignParentEnd="false"
         android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textColor="@android:color/black"
+        />
 
     <Button
         android:layout_width="wrap_content"
@@ -96,19 +113,24 @@
 
         android:layout_below="@+id/btnPower"
         android:layout_marginTop="20dp"
-        android:layout_centerHorizontal="false" />
+        android:layout_centerHorizontal="false"
+        android:textColor="@android:color/black"
+        />
 
-    <Button
+    <ImageButton
         android:text="Power"
+        app:srcCompat="@mipmap/cpower"
         android:id="@+id/btnPower"
         android:onClick="btnClick"
         android:layout_height="wrap_content"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:padding="30dp"
         android:layout_width="wrap_content"
-        android:textSize="24sp" />
+        android:textSize="30sp"
+        android:background="@android:color/background_light"
+        android:minHeight="80dp"
+        android:layout_marginBottom="25dp" />
 
-    <Button
+    <ImageButton
         android:text="Input"
         android:id="@+id/btnInput"
         android:onClick="btnClick"
@@ -116,9 +138,12 @@
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
-        android:padding="30dp"
-        android:textSize="24sp" />
-    <Button
+        android:textSize="24sp"
+        app:srcCompat="@mipmap/cinput"
+        android:background="@android:color/background_light"
+        android:minHeight="80dp"
+        />
+    <ImageButton
         android:text="Keypad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -128,9 +153,10 @@
         android:layout_below="@+id/btnPreset1"
         android:layout_centerHorizontal="true"
         android:layout_alignTop="@+id/Pup"
-        />
-    <Button
-        android:text="Youtube"
+        app:srcCompat="@mipmap/ckeypad"
+
+        android:background="@android:color/background_light" />
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="25dp"
@@ -139,15 +165,9 @@
         android:layout_below="@+id/btnKeypad"
         android:layout_centerHorizontal="true"
         android:layout_alignTop="@+id/Pdwn"
-        />
+        app:srcCompat="@mipmap/cyoutube"
 
-    <Button
-        android:text="Film"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/btnMovie"
-        android:onClick="btnClick"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/Pdwn"
-        android:layout_alignStart="@+id/btnYoutube" />
+        android:background="@android:color/background_light" />
+
+
 </RelativeLayout>

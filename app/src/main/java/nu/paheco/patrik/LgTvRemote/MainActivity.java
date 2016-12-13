@@ -59,96 +59,50 @@ public class MainActivity extends AppCompatActivity {
 
         switch (view.getId()) {
             case R.id.btnPower:
-                //code="2,20DF10EF,32,1";
                 System.out.println("Power");
-                // Get button label
-                Button b = (Button)view;
-                String buttonText = b.getText().toString();
                 code = getString(R.string.power);
-                mqttsend(code);
-                break;
-            /*
-            case R.id.btnInfo:
-                // 2 is the manu id from the Esp code
-                //code="2,20DF55AA,32,1";
-                code = getString(R.string.info);
-                System.out.println(code);
-                mqttsend(code);
-                break;
-            */
-            case R.id.btnPreset2:
-                // 2 is the manu id from the Esp code
-                // Send '1'
-                code = getString(R.string.d1);
-                System.out.println(code);
-                // Get button label
-                b = (Button)view;
-                buttonText = b.getText().toString();
-                mqttsend(code);
-                // Send '3'
-                code = getString(R.string.d3);
-                System.out.println(code);
-                mqttsend(code);
-                break;
-            case R.id.btnPreset3:
-                // Button '4'
-                //code="2,20DF28D7,32,1";
-                code = getString(R.string.d4);
-                System.out.println(code);
-                // Get button label
-                b = (Button)view;
-                buttonText = b.getText().toString();
-                mqttsend(code);
+                String type = "tv";
+                sendcode(code,type);
                 break;
             case btnPreset1:
-                String code = sharedPref.getString("preset1code", "Preset 1");
-                sendcode(code);
-
+                code = sharedPref.getString("preset1code", "Preset 1");
+                type = "tv";
+                sendcode(code,type);
+                break;
+            case btnPreset2:
+                code = sharedPref.getString("preset2code", "Preset 2");
+                type = "tv";
+                sendcode(code,type);
+                break;
+            case btnPreset3:
+                code = sharedPref.getString("preset3code", "Preset 3");
+                type = "tv";
+                sendcode(code,type);
                 break;
             case R.id.btnInput:
-                //code="2,20DFD02F,32,1";
                 code = getString(R.string.input);
-                System.out.println(code);
-                // Get button label
-                b = (Button)view;
-                buttonText = b.getText().toString();
-                mqttsend(code);
+                type = "tv";
+                sendcode(code,type);
                 break;
             case R.id.Pup:
-                //code="2,20DF00FF,32,1";
                 code = getString(R.string.pup);
-                System.out.println(code);
-                // Get button label
-                b = (Button)view;
-                buttonText = b.getText().toString();
-                mqttsend(code);
+                type = "tv";
+                sendcode(code,type);
                 break;
             case R.id.Pdwn:
-                //code="2,20DF807F,32,1";
                 code = getString(R.string.pdwn);
-                System.out.println(code);
-                // Get button label
-                b = (Button)view;
-                buttonText = b.getText().toString();
-                mqttsend(code);
+                type = "tv";
+                sendcode(code,type);
                 break;
             case R.id.volup:
-                //code="2,5EA158A7,32,1";
                 code = getString(R.string.volup);
-                System.out.println(code);
-                // Get button label
-                b = (Button)view;
-                buttonText = b.getText().toString();
-                mqttsend(code);
+                type = "amp";
+                sendcode(code,type);
                 break;
             case R.id.voldwn:
-                //code="2,5EA1D827,32,1";
                 code = getString(R.string.voldwn);
-                System.out.println(code);
-                // Get button label
-                b = (Button)view;
-                buttonText = b.getText().toString();
-                mqttsend(code);
+                type = "amp";
+                sendcode(code,type);
                 break;
 
             case R.id.btnYoutube:
@@ -195,7 +149,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void sendcode(String code){
+    public void sendcode(String code, String type){
         System.out.println("In sendcode, code="+code);
         // A code can be just one code, or several codes divided by a comma.
         // Split them up and send them
@@ -203,7 +157,15 @@ public class MainActivity extends AppCompatActivity {
         for (String codetosend : items)
         {
             //System.out.println("item = " + codetosend);
-            String wholeCode= "2,20DF" + codetosend + ",32,1";
+            String wholeCode="";
+            if (type=="tv") {
+                // pre_data = 20DF for LG TV
+                wholeCode = "2,20DF" + codetosend + ",32,1";
+            }
+            else {
+                // pre_data = 5EA1 for Yamaha receiver
+                wholeCode = "3,5EA1" + codetosend + ",32,1";
+            }
             System.out.println(wholeCode);
             mqttsend(wholeCode);
         }
