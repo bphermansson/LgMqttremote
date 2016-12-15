@@ -13,6 +13,8 @@
     <string name="input">D02F</string>
     <string name="pup">00FF</string>
     <string name="pdwn">807F</string>
+    <string name="voluptv">40BF</string>
+    <string name="voldwntv">C03F</string>
     <string name="volup">58A7</string>
     <string name="voldwn">D827</string>
     <string name="info">55AA</string>

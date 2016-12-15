@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
     }
     public void btnClick(View view) {
         System.out.println("btnClick");
+        System.out.println();
+
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
 
         switch (view.getId()) {
@@ -95,13 +97,34 @@ public class MainActivity extends AppCompatActivity {
                 sendcode(code,type);
                 break;
             case R.id.volup:
-                code = getString(R.string.volup);
-                type = "amp";
+                // If external amplifier is set in the settings, send "amp" as type
+                // This makes the app send another code
+                boolean extAmp = sharedPref.getBoolean("extAmp", false);
+                System.out.println("Volup ExtAmp: " + extAmp);
+
+                if (extAmp) {
+                    type = "amp";
+                    code = getString(R.string.volup);
+                }else
+                {
+                    type = "tv";
+                    code = getString(R.string.voluptv);
+                }
                 sendcode(code,type);
                 break;
             case R.id.voldwn:
-                code = getString(R.string.voldwn);
-                type = "amp";
+                boolean extAmpD = sharedPref.getBoolean("extAmp", false);
+                System.out.println("ExtAmp: " + extAmpD);
+                System.out.println("voldwn");
+
+                if (extAmpD) {
+                    type = "amp";
+                    code = getString(R.string.voldwn);
+                }else
+                {
+                    type = "tv";
+                    code = getString(R.string.voldwntv);
+                }
                 sendcode(code,type);
                 break;
 
@@ -158,7 +181,7 @@ public class MainActivity extends AppCompatActivity {
         {
             //System.out.println("item = " + codetosend);
             String wholeCode="";
-            if (type=="tv") {
+            if (type =="tv") {
                 // pre_data = 20DF for LG TV
                 wholeCode = "2,20DF" + codetosend + ",32,1";
             }

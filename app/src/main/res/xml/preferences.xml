@@ -38,5 +38,9 @@
             android:key="preset3code"
             android:title="@string/pref_preset3code"
             android:defaultValue="Preset 3" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:title="External amplifier"
+            android:key="extAmp" />
     </PreferenceCategory>
     </PreferenceScreen>
