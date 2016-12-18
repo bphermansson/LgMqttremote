@@ -10,15 +10,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
         android:id="@+id/row1">
-
-        <Button
-            android:layout_height="wrap_content"
-            android:text="1"
-            android:id="@+id/btn1"
-            android:enabled="true"
-            android:onClick="keypadbtnClick"
-            android:layout_width="wrap_content"
-            />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,7 +17,22 @@
             android:id="@+id/btn2"
             android:enabled="true"
             android:onClick="keypadbtnClick"
-            android:layout_toEndOf="@id/btn1"
+            android:layout_centerHorizontal="true"
+            android:padding="20dp"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            />
+        <Button
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:id="@+id/btn1"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+            android:layout_width="wrap_content"
+            android:padding="20dp"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:layout_toStartOf="@id/btn2"
             />
         <Button
             android:layout_width="wrap_content"
@@ -36,7 +42,9 @@
             android:enabled="true"
             android:onClick="keypadbtnClick"
             android:layout_toEndOf="@id/btn2"
-            android:layout_centerHorizontal="true" />
+            android:padding="20dp"
+            android:textSize="18sp"
+            android:layout_margin="10dp"/>
     </RelativeLayout>
 
     <RelativeLayout
@@ -48,22 +56,30 @@
         android:layout_marginStart="55dp"
         >
         <Button
-            android:layout_height="wrap_content"
-            android:text="4"
-            android:id="@+id/btn4"
-            android:enabled="true"
-            android:onClick="keypadbtnClick"
-            android:layout_width="wrap_content"
-            />
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="5"
             android:id="@+id/btn5"
             android:enabled="true"
             android:onClick="keypadbtnClick"
-            android:layout_toEndOf="@id/btn4"
+            android:layout_centerHorizontal="true"
+            android:padding="20dp"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
             />
+        <Button
+            android:layout_height="wrap_content"
+            android:text="4"
+            android:id="@+id/btn4"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+            android:layout_width="wrap_content"
+            android:padding="20dp"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:layout_toStartOf="@id/btn5"
+            />
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,6 +88,9 @@
             android:enabled="true"
             android:onClick="keypadbtnClick"
             android:layout_toEndOf="@id/btn5"
+            android:padding="20dp"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
             />
         \>
     </RelativeLayout>
@@ -84,21 +103,28 @@
         android:layout_marginStart="55dp"
         >
         <Button
-            android:layout_height="wrap_content"
-            android:text="7"
-            android:id="@+id/btn7"
-            android:enabled="true"
-            android:onClick="keypadbtnClick"
-            android:layout_width="wrap_content"
-            />
-        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="8"
             android:id="@+id/btn8"
             android:enabled="true"
             android:onClick="keypadbtnClick"
-            android:layout_toEndOf="@id/btn7"
+            android:layout_centerHorizontal="true"
+            android:padding="20dp"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            />
+        <Button
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:id="@+id/btn7"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+            android:layout_width="wrap_content"
+            android:padding="20dp"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:layout_toStartOf="@id/btn8"
             />
         <Button
             android:layout_width="wrap_content"
@@ -108,6 +134,9 @@
             android:enabled="true"
             android:onClick="keypadbtnClick"
             android:layout_toEndOf="@id/btn8"
+            android:padding="20dp"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
             />
         \>
 
@@ -120,15 +149,6 @@
         android:layout_marginStart="55dp"
         >
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            android:id="@+id/btnback"
-            android:enabled="true"
-            android:onClick="keypadbtnClick"
-
-            />
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -136,8 +156,24 @@
         android:id="@+id/btn0"
         android:enabled="true"
         android:onClick="keypadbtnClick"
-        android:layout_toEndOf="@id/btnback"
+        android:layout_centerHorizontal="true"
+        android:padding="20dp"
+        android:textSize="18sp"
+        android:layout_margin="10dp"
         />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/btnback"
+            android:enabled="true"
+            android:onClick="keypadbtnClick"
+            android:padding="15dp"
+            android:textSize="18sp"
+            android:layout_margin="10dp"
+            android:layout_toStartOf="@id/btn0"
+            />
     \>
     </RelativeLayout>
 

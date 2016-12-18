@@ -21,6 +21,7 @@ public class sendcode{
     // A code can be just one code, or several codes divided by a comma.
     // Split them up and send them
     String[] items = code.split(",");
+
     for (String codetosend : items) {
         //System.out.println("item = " + codetosend);
         String wholeCode = "2,20DF" + codetosend + ",32,1";
@@ -30,8 +31,12 @@ public class sendcode{
 }
     public void mqttsend(String code, Context context) {
         System.out.println("sendcode.mqttsend");
+
+        // Get context so we can use preferences in other classes
+        Context applicationContext = MainActivity.getContextOfApplication();
+
         // Get stored preferences
-        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(applicationContext);
         String mqttip = sharedPref.getString("Mqtt server ip", "N/A");
         String mqttuser = sharedPref.getString("Mqtt server username", "N/A");
         String mqttpass = sharedPref.getString("Mqtt server password", "N/A");
@@ -54,7 +59,6 @@ public class sendcode{
             //infolabel.setText(R.string.mess_sent);
         }
         System.out.println("sendcode done");
-
     }
 
 }

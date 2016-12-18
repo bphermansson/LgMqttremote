@@ -24,12 +24,18 @@ public class MainActivity extends AppCompatActivity {
     private Context mContext;
     public static String topic="irsender";
     String code = "";
-    //TextView infolabel = (TextView) findViewById(R.id.infolabel);
+
+    // Get context so we can use preferences in other classes
+    //http://stackoverflow.com/questions/7491287/android-how-to-use-sharedpreferences-in-non-activity-class
+    public static Context contextOfApplication;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        // Get context so we can use preferences in other classes
+        contextOfApplication = getApplicationContext();
 
         // Get stored preferences
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -53,6 +59,12 @@ public class MainActivity extends AppCompatActivity {
             // Settings not configured
         }
     }
+
+    // Get context so we can use preferences in other classes
+    public static Context getContextOfApplication(){
+        return contextOfApplication;
+    }
+
     public void btnClick(View view) {
         System.out.println("btnClick");
         System.out.println();
