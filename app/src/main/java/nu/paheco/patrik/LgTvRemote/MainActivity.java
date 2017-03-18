@@ -18,7 +18,7 @@ import static nu.paheco.patrik.LgTvRemote.R.id.btnPreset1;
 import static nu.paheco.patrik.LgTvRemote.R.id.btnPreset2;
 import static nu.paheco.patrik.LgTvRemote.R.id.btnPreset3;
 
-// http://lirc.sourceforge.net/remotes/
+//
 
 public class MainActivity extends AppCompatActivity {
     private Context mContext;
@@ -108,6 +108,22 @@ public class MainActivity extends AppCompatActivity {
                 type = "tv";
                 sendcode(code,type);
                 break;
+            case R.id.btnInfo:
+                code = "D52A";
+                type = "tv";
+                sendcode(code,type);
+                break;
+            case R.id.btnadown:
+                code = "827D";
+                type = "tv";
+                sendcode(code,type);
+                break;
+            case R.id.btnaup:
+                code = "02FD";
+                type = "tv";
+                sendcode(code,type);
+                break;
+
             case R.id.volup:
                 // If external amplifier is set in the settings, send "amp" as type
                 // This makes the app send another code

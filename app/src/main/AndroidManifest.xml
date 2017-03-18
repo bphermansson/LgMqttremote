@@ -30,7 +30,9 @@
             android:windowSoftInputMode="adjustResize">
         </activity>
 
-        <activity android:name="nu.paheco.patrik.LgTvRemote.MainActivity">
+        <activity
+            android:name="nu.paheco.patrik.LgTvRemote.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

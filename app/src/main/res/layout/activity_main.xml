@@ -49,14 +49,13 @@
         android:layout_height="wrap_content"
         android:id="@+id/volup"
         android:onClick="btnClick"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:background="@android:color/background_light"
         android:layout_marginLeft="10dp"
         android:layout_below="@+id/btnPreset1"
         android:layout_marginTop="41dp"
         android:layout_alignParentRight="true"
         android:minHeight="80dp"
-        />
+        android:background="@android:color/transparent"
+        android:layout_alignStart="@+id/btnPreset3" />
 
     <ImageButton
         android:text="Vol down"
@@ -147,27 +146,66 @@
         android:text="Keypad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
         android:id="@+id/btnKeypad"
         android:onClick="btnClick"
         android:layout_below="@+id/btnPreset1"
-        android:layout_centerHorizontal="true"
         android:layout_alignTop="@+id/Pup"
         app:srcCompat="@mipmap/ckeypad"
 
-        android:background="@android:color/background_light" />
+        android:background="@android:color/background_light"
+        android:layout_above="@+id/Pdwn"
+        android:layout_alignStart="@+id/btnPreset2"
+        android:layout_alignEnd="@+id/btnPreset2" />
     <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
         android:id="@+id/btnYoutube"
         android:onClick="btnClick"
         android:layout_below="@+id/btnKeypad"
-        android:layout_centerHorizontal="true"
         android:layout_alignTop="@+id/Pdwn"
         app:srcCompat="@mipmap/cyoutube"
 
-        android:background="@android:color/background_light" />
+        android:background="@android:color/background_light"
+        android:layout_above="@+id/btnInfo"
+        android:layout_alignEnd="@+id/btnKeypad"
+        android:layout_alignStart="@+id/btnKeypad" />
+
+    <ImageButton
+        android:id="@+id/btnInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/btnYoutube"
+        android:layout_below="@+id/voldwn"
+        android:layout_marginTop="12dp"
+        android:background="@android:color/background_light"
+        android:onClick="btnClick"
+        app:srcCompat="@mipmap/info"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/btnYoutube" />
+
+    <ImageButton
+        android:id="@+id/btnaup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Pdwn"
+        android:layout_alignTop="@+id/btnInfo"
+        android:background="@android:color/background_light"
+        android:onClick="btnClick"
+        app:srcCompat="@mipmap/arrowup"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <ImageButton
+        android:id="@+id/btnadown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/voldwn"
+        android:layout_alignTop="@+id/btnInfo"
+        android:background="@android:color/background_light"
+        android:onClick="btnClick"
+        app:srcCompat="@mipmap/arrowdown"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true" />
 
 
 </RelativeLayout>

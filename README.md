@@ -24,3 +24,5 @@ Some codes:<br>
 4 - 28D7<br>
 
 If you want to use an external amplifier (only Yamaha supported by now), check use external amp.
+
+Icons from http://www.flaticon.com/
