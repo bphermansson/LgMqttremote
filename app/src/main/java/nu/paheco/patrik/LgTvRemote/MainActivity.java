@@ -123,7 +123,16 @@ public class MainActivity extends AppCompatActivity {
                 type = "tv";
                 sendcode(code,type);
                 break;
-
+            case R.id.btnaleft:
+                code = "E01F";
+                type = "tv";
+                sendcode(code,type);
+                break;
+            case R.id.btnOk:
+                code = "22DD";
+                type = "tv";
+                sendcode(code,type);
+                break;
             case R.id.volup:
                 // If external amplifier is set in the settings, send "amp" as type
                 // This makes the app send another code
