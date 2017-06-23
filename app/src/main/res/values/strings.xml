@@ -7,10 +7,12 @@
     <string name="pref_preset1">Preset 1 label</string>
     <string name="pref_preset2">Preset 2 label</string>
     <string name="pref_preset3">Preset 3 label</string>
+    <string name="pref_preset4">Preset 4 label</string>
+
     <string name="pref_preset1code">Preset 1 code</string>
     <string name="pref_preset2code">Preset 2 code</string>
     <string name="pref_preset3code">Preset 3 code</string>
-
+    <string name="pref_preset4code">Preset 4 code</string>
 
 
     <string name="notset">Error: Check settings</string>

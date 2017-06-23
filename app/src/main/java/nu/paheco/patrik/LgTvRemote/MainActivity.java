@@ -17,6 +17,7 @@ import android.widget.Toast;
 import static nu.paheco.patrik.LgTvRemote.R.id.btnPreset1;
 import static nu.paheco.patrik.LgTvRemote.R.id.btnPreset2;
 import static nu.paheco.patrik.LgTvRemote.R.id.btnPreset3;
+import static nu.paheco.patrik.LgTvRemote.R.id.btnPreset4;
 
 //
 
@@ -48,13 +49,17 @@ public class MainActivity extends AppCompatActivity {
         Button Preset1 = (Button)findViewById(btnPreset1);
         Button Preset2 = (Button)findViewById(btnPreset2);
         Button Preset3 = (Button)findViewById(btnPreset3);
+        Button Preset4 = (Button)findViewById(btnPreset4);
+
         String preset1text = sharedPref.getString("preset1", "Preset 1");
         String preset2text = sharedPref.getString("preset2", "Preset 2");
         String preset3text = sharedPref.getString("preset3", "Preset 3");
+        String preset4text = sharedPref.getString("preset4", "Preset 4");
+
         Preset1.setText(preset1text);
         Preset2.setText(preset2text);
         Preset3.setText(preset3text);
-
+        Preset4.setText(preset4text);
         if (mqttip.equals("N/A") || mqttuser.equals("N/A") || mqttpass.equals("N/A")) {
             // Settings not configured
         }
@@ -90,6 +95,11 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case btnPreset3:
                 code = sharedPref.getString("preset3code", "Preset 3");
+                type = "tv";
+                sendcode(code,type);
+                break;
+            case btnPreset4:
+                code = sharedPref.getString("preset4code", "Preset 4");
                 type = "tv";
                 sendcode(code,type);
                 break;

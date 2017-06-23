@@ -27,6 +27,10 @@
             android:title="@string/pref_preset3"
             android:defaultValue="Preset 3" />
         <EditTextPreference
+            android:key="preset4"
+            android:title="@string/pref_preset4"
+            android:defaultValue="Preset 4" />
+        <EditTextPreference
             android:key="preset1code"
             android:title="@string/pref_preset1code"
             android:defaultValue="Preset 1" />
@@ -38,6 +42,10 @@
             android:key="preset3code"
             android:title="@string/pref_preset3code"
             android:defaultValue="Preset 3" />
+        <EditTextPreference
+            android:key="preset4code"
+            android:title="@string/pref_preset4code"
+            android:defaultValue="Preset 4" />
         <CheckBoxPreference
             android:defaultValue="false"
             android:title="External amplifier"
