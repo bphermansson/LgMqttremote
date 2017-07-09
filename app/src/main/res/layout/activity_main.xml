@@ -17,7 +17,7 @@
         android:id="@+id/Pup"
         style="@style/Widget.AppCompat.Button.Colored"
         android:layout_below="@+id/btnPreset1"
-        android:layout_marginTop="52dp"
+        android:layout_marginTop="32dp"
         android:background="@null"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
@@ -68,70 +68,69 @@
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
+        android:layout_below="@+id/btnadown"
+        />
+
+  <Button
+        android:id="@+id/btnPreset1"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnadown"
+        android:layout_margin="5dp"
+
+        android:layout_width="70dp"
+
+        android:background="@drawable/button_border"
+        android:onClick="btnClick"
+        android:padding="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp" />
+    <Button
+        android:id="@+id/btnPreset2"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnPreset1"
+        android:layout_alignBottom="@+id/btnPreset1"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/btnPreset1"
+        android:background="@drawable/button_border"
+        android:onClick="btnClick"
+        android:padding="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        />
+    <Button
+        android:id="@+id/btnPreset3"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/btnPreset1"
+        android:layout_alignBottom="@+id/btnPreset1"
+        android:layout_margin="5dp"
+        android:layout_toEndOf="@+id/btnPreset2"
+        android:background="@drawable/button_border"
+        android:onClick="btnClick"
+        android:padding="5dp"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
         />
 
     <Button
         android:id="@+id/btnPreset4"
         style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/btnPreset1"
         android:layout_alignBottom="@+id/btnPreset1"
-        android:layout_marginStart="5dp"
+        android:layout_margin="5dp"
         android:layout_toEndOf="@+id/btnPreset3"
-
-        android:width="15dp"
         android:background="@drawable/button_border"
         android:onClick="btnClick"
         android:padding="5dp"
-        android:textColor="@android:color/black" />
-    <Button
-        android:id="@+id/btnPreset3"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnPreset1"
-        android:layout_alignBottom="@+id/btnPreset1"
-        android:layout_marginLeft="5dp"
-        android:layout_toEndOf="@+id/btnPreset2"
-        android:width="15dp"
-        android:background="@color/btnVol"
-        android:onClick="btnClick"
-        android:padding="5dp"
-        android:textColor="@android:color/black" />
-
-    <Button
-        android:id="@+id/btnPreset2"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/btnPreset1"
-        android:layout_alignBottom="@+id/btnPreset1"
-        android:layout_marginLeft="5dp"
-        android:layout_toEndOf="@+id/btnPreset1"
-        android:width="15dp"
-        android:background="@color/btnVol"
-        android:onClick="btnClick"
-        android:padding="5dp"
         android:textColor="@android:color/black"
-
+        android:textSize="12sp"
         />
-
-    <Button
-        android:id="@+id/btnPreset1"
-        style="@style/Widget.AppCompat.Button.Colored"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnadown"
-        android:layout_marginTop="16dp"
-        android:width="10dp"
-
-        android:background="@color/btnVol"
-        android:onClick="btnClick"
-        android:padding="5dp"
-        android:textColor="@android:color/black"
-        android:textSize="12sp" />
-
     <ImageButton
         android:id="@+id/btnPower"
         style="@style/Widget.AppCompat.Button.Colored"
