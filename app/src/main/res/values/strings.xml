@@ -28,6 +28,11 @@
 
         Start by opening the settings. There you set the Ip of your Mqtt-broker, the userid and the password.
         After that the app is ready for use.
+        Preset buttons can be configured with label and code. The code is from http://lirc.sourceforge.net/remotes/lg/AKB69680403.
+        For example, the page says:
+        KEY_1                    0x8877
+        Then set 8877 as preset code and the button will send a \'1\'.
+        A code can be just one code, or several codes divided by a comma.
 
 
     </string>

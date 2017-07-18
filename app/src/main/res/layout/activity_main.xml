@@ -30,17 +30,15 @@
     <ImageButton
         android:id="@+id/Pdwn"
         style="@style/Widget.AppCompat.Button.Colored"
-
         android:background="@null"
         android:onClick="btnClick"
-
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
-
+        android:layout_below="@id/Pup"
+        android:layout_marginTop="32dp"
         app:srcCompat="@drawable/pminus"
-        android:layout_alignTop="@+id/btnYoutube"
         android:layout_alignParentStart="true" />
 
     <ImageButton
@@ -48,12 +46,14 @@
         android:background="@null"
         android:onClick="btnClick"
         app:srcCompat="@drawable/volup"
-        android:layout_alignTop="@+id/btnKeypad"
         android:layout_alignParentEnd="true"
         android:layout_width="60dp"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
+        android:layout_below="@+id/btnPreset1"
+        android:layout_marginTop="30dp"
+
         />
 
     <ImageButton
@@ -62,13 +62,13 @@
         android:background="@null"
         android:onClick="btnClick"
         app:srcCompat="@drawable/voldown"
-        android:layout_alignTop="@+id/btnYoutube"
         android:layout_alignParentEnd="true"
         android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
-        android:layout_below="@+id/btnadown"
+        android:layout_below="@+id/volup"
+        android:layout_marginTop="30dp"
         />
 
   <Button
@@ -162,9 +162,9 @@
         android:background="@null"
         android:onClick="btnClick"
         app:srcCompat="@drawable/dial"
-        android:layout_above="@+id/btnYoutube"
+        android:layout_below="@+id/btnPreset1"
         android:layout_centerHorizontal="true"
-
+        android:layout_marginTop="32dp"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
@@ -176,9 +176,8 @@
         android:background="@null"
         android:onClick="btnClick"
         app:srcCompat="@drawable/yt"
-        android:layout_below="@+id/Pup"
-        android:layout_alignStart="@+id/btnKeypad"
-        android:layout_marginTop="30dp"
+        android:layout_below="@+id/btnaup"
+        android:layout_alignStart="@+id/btnPower"
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
@@ -248,7 +247,6 @@
         app:srcCompat="@drawable/aright"
         android:layout_below="@+id/btnaup"
         android:layout_toEndOf="@+id/btnaup"
-
         android:layout_width="50dp"
         android:layout_height="wrap_content"
         android:scaleType="fitXY"
@@ -269,6 +267,18 @@
         android:scaleType="fitXY"
         android:adjustViewBounds="true"
         />
-
+    <ImageButton
+        android:id="@+id/btnNight"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:onClick="btnClick"
+        app:srcCompat="@drawable/nightmode"
+        android:scaleType="fitXY"
+        android:adjustViewBounds="true"
+        android:layout_below="@id/btnKeypad"
+        android:layout_marginTop="30dp"
+        android:layout_centerInParent="true"
+        />
 
 </RelativeLayout>

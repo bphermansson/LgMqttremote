@@ -143,6 +143,11 @@ public class MainActivity extends AppCompatActivity {
                 type = "tv";
                 sendcode(code,type);
                 break;
+            case R.id.btnNight:
+                code = "A956";
+                type = "amp";
+                sendcode(code,type);
+                break;
             case R.id.volup:
                 // If external amplifier is set in the settings, send "amp" as type
                 // This makes the app send another code
@@ -224,9 +229,12 @@ public class MainActivity extends AppCompatActivity {
         // A code can be just one code, or several codes divided by a comma.
         // Split them up and send them
         String[] items = code.split(",");
+        int x=0;
         for (String codetosend : items)
         {
-            //System.out.println("item = " + codetosend);
+
+            System.out.println("item = " + codetosend + ",x:" + x);
+            x++;
             String wholeCode="";
             if (type =="tv") {
                 // pre_data = 20DF for LG TV
@@ -242,6 +250,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void mqttsend(String code) {
+        System.out.println("In mqttsend");
+
         // Get stored preferences
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
         String mqttip = sharedPref.getString("Mqtt server ip", "N/A");
@@ -255,6 +265,8 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             mqttPublish.main(mContext, mqttip, mqttuser, mqttpass, topic, code);
+            System.out.println("Publish!");
+
             Context context = getApplicationContext();
             Toast tea = Toast.makeText(context, R.string.mess_sent, Toast.LENGTH_SHORT);
             tea.show();
