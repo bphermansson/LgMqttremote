@@ -138,6 +138,11 @@ public class MainActivity extends AppCompatActivity {
                 type = "tv";
                 sendcode(code,type);
                 break;
+            case R.id.btnaright:
+                code = "609F";
+                type = "tv";
+                sendcode(code,type);
+                break;
             case R.id.btnOk:
                 code = "22DD";
                 type = "tv";
